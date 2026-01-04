@@ -58,3 +58,8 @@ Example NDVI output generated from Sentinel-2 L2A imagery after AOI clipping and
 - Parameterise AOI, date range, and output paths via CLI arguments.
 - Add automated STAC search as a script (select lowest cloud cover within date range).
 - Add basic tests (shape/CRS checks, nodata behaviour) and CI.
+
+Alternative (parameterised run):
+
+```bash
+python scripts/run_ndvi.py --red data\red.tif --nir data\nir.tif --out output\ndvi.tif --nodata -9999
