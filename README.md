@@ -63,3 +63,6 @@ Alternative (parameterised run):
 
 ```bash
 python scripts/run_ndvi.py --red data\red.tif --nir data\nir.tif --out output\ndvi.tif --nodata -9999
+
+## Related project
+See also: YOLOv8 detection/segmentation pipeline (computer vision applied to imagery): https://github.com/nse4real/object-detection-segmentation-yolo-maskrcnn
