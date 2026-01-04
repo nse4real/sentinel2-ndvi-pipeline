@@ -38,3 +38,10 @@ Example NDVI output generated from Sentinel-2 L2A imagery after AOI clipping and
 - NDVI computed using Sentinel-2 B04 (Red) and B08 (NIR) bands
 - Explicit nodata handling to avoid AOI edge artefacts
 - Output GeoTIFF is analysis-ready for GIS or downstream modelling
+
+## Lessons learned
+
+- **COGs + GDAL are faster than downloading full scenes:** Streaming remote COGs and clipping early kept the workflow lightweight and repeatable.
+- **Projection matters for pixel math:** Reprojecting to UTM (EPSG:32630) avoided distortions and ensured consistent pixel sizing for the AOI.
+- **Band naming varies across catalogs:** STAC assets may expose bands as `red/nir` rather than `B04/B08`, so inspecting asset keys is essential.
+- **Nodata handling is not optional:** Explicit nodata masking prevents NDVI artefacts at AOI boundaries and in areas with missing pixels.
