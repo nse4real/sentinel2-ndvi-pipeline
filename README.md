@@ -26,3 +26,15 @@ A small end-to-end Earth Observation project that:
 conda create -n ndvi python=3.12 -y
 conda activate ndvi
 conda install -c conda-forge gdal rasterio geopandas shapely pyproj fiona numpy matplotlib -y
+```
+
+## Results
+
+Example NDVI output generated from Sentinel-2 L2A imagery after AOI clipping and reprojection to UTM.
+
+![NDVI preview](assets/ndvi_preview.png)
+
+### Notes
+- NDVI computed using Sentinel-2 B04 (Red) and B08 (NIR) bands
+- Explicit nodata handling to avoid AOI edge artefacts
+- Output GeoTIFF is analysis-ready for GIS or downstream modelling
